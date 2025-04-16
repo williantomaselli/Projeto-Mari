@@ -1,76 +1,181 @@
- /* Reset básico */
- * {
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  body {
+}
+
+body {
     overflow-x: hidden;
-  }
+}
 
-  
-
-/* Anims */
-
-@keyframes red-blue-anim{
-    0%{
+/* Animação gradiente do nav */
+@keyframes red-blue-anim {
+    0% {
         background-color: rgb(212, 30, 30);
     }
-
-    100%{
+    100% {
         background-color: rgb(34, 143, 206);
     }
 }
 
-.red-blue-anim{
+.red-blue-anim {
     animation: red-blue-anim 3s infinite alternate;
 }
 
-.bar{
+/* Nav customizado */
+.bar {
     width: 30%;
     height: 2px;
     border-radius: 5px;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
 }
 
-.nav{
+.nav {
     display: flex;
     justify-content: space-between;
-
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     transition: 0.3s ease-in-out;
-
     z-index: 100000;
 }
 
-.rainbow:hover{
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+.rainbow:hover {
+    box-shadow:
+        rgba(0, 0, 0, 0.3) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px,
+        rgb(85, 91, 255) 0px 0px 0px 3px,
+        rgb(31, 193, 27) 0px 0px 0px 6px,
+        rgb(255, 217, 19) 0px 0px 0px 9px,
+        rgb(255, 156, 85) 0px 0px 0px 12px,
+        rgb(255, 85, 85) 0px 0px 0px 15px;
     transform: scale(1.05);
 }
 
-
-.brand{
+.brand {
     text-decoration: none;
     color: white;
-
-    font-family: "Special Gothic Expanded One";
-    font-size: 4rem;z-index: -10;
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: 4rem;
+    z-index: -10;
 }
 
-.divisor{
+/* Divisor com animação */
+.divisor {
     width: 100%;
     min-width: 100%;
     height: 2rem;
     animation: red-blue-anim 3s infinite alternate;
     transition: 0.3s ease-in-out;
-
 }
 
-/* Garante que as imagens se adaptem à largura total da tela */
+/* === Carrossel === */
+.carousel,
+.carousel-inner,
+.carousel-item {
+    height: 60vh;
+}
+
 .carousel-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
+    object-position: center;
     z-index: 100;
+}
+
+/* Lhama na seção */
+.lhama-img {
+    width: 40%;
+    margin: 5vh;
+    transition: transform 0.6s ease;
+}
+
+/* Título e botão da área lhamas */
+.lhamas h3 {
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: "Special Gothic Expanded One", sans-serif;
+    margin-bottom: 2rem;
+}
+
+audio {
+    display: none;
   }
+  
+
+.botao {
+    width: 32vw;
+}
+
+/* === Animação de Flip === */
+/*
+A animação faz a imagem girar em Y de 0 a 90 graus (meio caminho),
+então trocamos a imagem via JavaScript, e ela completa os 90 até 0.
+*/
+@keyframes flipAnimation {
+  0% {
+    transform: perspective(600px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(600px) rotateY(90deg);
+  }
+  100% {
+    transform: perspective(600px) rotateY(0deg);
+  }
+}
+
+/* A classe 'flip' será adicionada via JS para acionar a animação */
+.flip {
+  animation: flipAnimation 0.8s forwards;
+}
+
+.lyrics{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5vh;
+    width: 100%;
+    height: 80vh;
+    color: white;
+
+    background: url(/public/images/mar.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.l1{
+    font-size: 2rem;
+}
+
+.l2{
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.l3{
+    font-size: 2rem;
+}
+
+.l4{
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.hover-l{
+    transition: 0.5s ease;
+}
+
+.hover-l:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(1.03);
+}
+
+.l-container{
+    background-color: rgb(51, 51, 186);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: blue 0px 0px 0px 2px inset, rgba(255, 255, 255, 0) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgba(255, 255, 255, 0) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgba(255, 255, 255, 0) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgba(255, 255, 255, 0) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px;
+    
+}
