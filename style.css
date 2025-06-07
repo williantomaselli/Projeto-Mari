@@ -142,7 +142,7 @@ então trocamos a imagem via JavaScript, e ela completa os 90 até 0.
     height: 80vh;
     color: white;
 
-    background: url(/public/images/mar.jpg);
+    background: url(./images/mar.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
