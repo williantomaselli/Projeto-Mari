@@ -1,22 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const botao = document.querySelector(".botao");
-  const lhamaImg = document.querySelector(".lhama-img");
+  const botao     = document.querySelector(".botao");
+  const lhamaImg  = document.querySelector(".lhama-img");
+  const audio     = document.getElementById("player");
 
-  // Caminhos das imagens (altere para as imagens que deseja usar)
-  const imgFrente = "./images/l3.jpeg";       // imagem inicial/frente
-  const imgVerso = "./images/Design sem nome (1)-Photoroom.png"; // imagem para mostrar após a transição (verso)
+  // Caminhos das imagens (frente e verso)
+  const imgFrente = "./images/l3.jpeg";
+  const imgVerso  = "./images/Design sem nome (1)-Photoroom.png";
 
-  let mostrandoFrente = true; // controle de qual imagem está sendo exibida
+  let mostrandoFrente = true;
 
   botao.addEventListener("click", function () {
-    // Primeiro, aplica o flip até 90 graus (meio giro)
+    // 1) Toca ou pausa o áudio
+    if (audio.paused) {
+      audio.play();
+    }
+    // 2) Faz o flip da lhama
     lhamaImg.style.transform = "perspective(600px) rotateY(90deg)";
-    
-    // Após 400ms (metade da transição de 0.4s) trocamos a imagem...
     setTimeout(() => {
       mostrandoFrente = !mostrandoFrente;
       lhamaImg.src = mostrandoFrente ? imgFrente : imgVerso;
-      // ...e voltamos o flip para 0 graus (completando a transição)
       lhamaImg.style.transform = "perspective(600px) rotateY(0deg)";
     }, 400);
   });
