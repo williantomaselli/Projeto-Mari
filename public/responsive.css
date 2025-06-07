@@ -1,0 +1,100 @@
+/* ----------------------------------------
+   Responsividade para telas até 768px
+   ---------------------------------------- */
+@media (max-width: 768px) {
+  /* Nav */
+  .bar {
+    width: 20%;
+  }
+  .brand {
+    font-size: 2rem !important;
+  }
+
+  /* Carrossel */
+  .carousel,
+  .carousel-inner,
+  .carousel-item {
+    height: 40vh !important;
+  }
+
+  /* Seção Lhamas: empilha verticalmente */
+  .lhamas {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 2rem 0;
+  }
+  .ask-llama h3 {
+    font-size: 2rem !important;
+  }
+  .lhama-img {
+    width: 80% !important;
+    margin: 2rem 0 !important;
+  }
+  .botao {
+    width: 80vw !important;
+  }
+
+  /* Texto das lyrics: ajusta tamanhos e padding */
+  .lyrics {
+    height: auto !important;
+    padding: 2rem 1rem !important;
+  }
+  .l1 {
+    font-size: 1.2rem !important;
+  }
+  .l2 {
+    font-size: 1.5rem !important;
+  }
+  .l3 {
+    font-size: 1.2rem !important;
+  }
+  .l4 {
+    font-size: 1.5rem !important;
+  }
+  .l-container {
+    padding: 1.5rem !important;
+  }
+}
+
+/* ----------------------------------------
+   Responsividade para telas até 480px
+   (smartphones menores)
+   ---------------------------------------- */
+@media (max-width: 480px) {
+  .brand {
+    font-size: 1.5rem !important;
+  }
+  .ask-llama h3 {
+    font-size: 1.5rem !important;
+  }
+  .botao {
+    font-size: 0.9rem !important;
+  }
+  .l1 {
+    font-size: 1rem !important;
+  }
+  .l2 {
+    font-size: 1.2rem !important;
+  }
+  .l3 {
+    font-size: 1rem !important;
+  }
+  .l4 {
+    font-size: 1.2rem !important;
+  }
+
+  .bar{
+    display: none;
+  }
+
+  .nav{
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .fotos-container {
+    flex-direction: column;
+  }
+}
