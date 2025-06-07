@@ -21,3 +21,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 400);
   });
 });
+
+
+// index.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("player");
+  const btn   = document.getElementById("playBtn");
+
+  btn.addEventListener("click", () => {
+    // se estiver pausado, toca; se estiver tocando, pausa
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = "⏸️ Pausar Música";
+      btn.classList.replace("btn-success", "btn-danger");
+    } else {
+      audio.pause();
+      btn.textContent = "▶️ Tocar Música";
+      btn.classList.replace("btn-danger", "btn-success");
+    }
+  });
+});

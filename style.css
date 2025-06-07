@@ -109,6 +109,20 @@ audio {
 
 .botao {
     width: 32vw;
+    height: 8vh;
+}
+
+.l-container .botao{
+    color: rgb(156, 158, 238);
+    height: 8vh;
+    margin-top: 10px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.168);
+    transition: 0.2s ease;
+}
+
+.l-container .botao:hover{
+    transform: scale(1.1);
 }
 
 /* === Animação de Flip === */
